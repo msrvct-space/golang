@@ -1,0 +1,7 @@
+name: runtime binary for golang
+on:
+  - workflow_call
+jobs:
+  golang:
+    uses: ./.github/workflows/golang_1.21.5.yml
+    secrets: inherit
