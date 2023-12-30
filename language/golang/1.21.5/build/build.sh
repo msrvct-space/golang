@@ -23,7 +23,11 @@ function get_install_tool() {
     mkdir -p ${WORK_PATH} && cd ${WORK_PATH}
     TOOL_NAME="msrvct-exec"
     TOOL_VERSION="v0.0.1"
-    TOOL_PKG="msrvct-exec_${KERNEL}_${ARCH}.tar.gz"
+    CURRENT_ARCH=${ARCH}
+    if [ "${CURRENT_ARCH}" == "aarch64" ]; then
+        CURRENT_ARCH="arm64"
+    fi
+    TOOL_PKG="msrvct-exec_${KERNEL}_${CURRENT_ARCH}.tar.gz"
     TOOL_URL="https://github.com/devops-toolbox/msrvct-exec/releases/download/${TOOL_VERSION}/${TOOL_PKG}"
     curl -L -k -o ${TOOL_PKG} ${TOOL_URL}
     tar -xvf ${TOOL_PKG} ${TOOL_NAME}
