@@ -1,0 +1,20 @@
+common:
+  file: msrvct.yaml
+  path: /etc/msrvct
+scripts:
+  pre_script: []
+  post_script: []
+variables: []
+packages:
+  - name: golang
+    version: 1.21.5
+    documents:
+      - name: go1.21.5.linux-amd64.tar.gz
+        type: pkg
+        path_mode: 0755
+        file_mode: 0755
+      - name: golang.env
+        type: env
+        template: true
+        path_mode: 0755
+        file_mode: 0755

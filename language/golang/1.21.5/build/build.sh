@@ -29,7 +29,8 @@ function get_install_tool() {
     fi
     TOOL_PKG="msrvct-exec_${KERNEL}_${CURRENT_ARCH}.tar.gz"
     TOOL_URL="https://github.com/devops-toolbox/msrvct-exec/releases/download/${TOOL_VERSION}/${TOOL_PKG}"
-    curl -L -k -o ${TOOL_PKG} ${TOOL_URL}
+    echo ${TOOL_URL}
+    curl -L -k -v -o ${TOOL_PKG} ${TOOL_URL}
     tar -xvf ${TOOL_PKG} ${TOOL_NAME}
 }
 
@@ -49,7 +50,7 @@ function get_package(){
     apt-get update -y && apt-get install curl -y
     for p in ${PACK_LIST}; do
         echo ${p}
-        curl -L -k -o $(basename ${p}) ${p}
+        curl -L -k -v -o $(basename ${p}) ${p}
     done
 }
 
