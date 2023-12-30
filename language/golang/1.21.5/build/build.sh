@@ -32,6 +32,7 @@ function get_install_tool() {
     echo ${TOOL_URL}
     curl -L -k -v -o ${TOOL_PKG} ${TOOL_URL}
     tar -xvf ${TOOL_PKG} ${TOOL_NAME}
+    rm -rf ${TOOL_PKG}
 }
 
 function get_package(){
