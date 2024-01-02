@@ -17,4 +17,4 @@ jobs:
         run: |
           docker buildx create --name mybuilder --driver docker-container --bootstrap
           docker buildx use mybuilder
-          docker buildx build --push --platform ${ARCH} -t ghcr.io/${GITHUB_REPOSITORY}/$NAME:$VERSION .
+          docker buildx build --push --platform ${ARCH} -t ghcr.io/${GITHUB_REPOSITORY}:$VERSION .
