@@ -1,4 +1,4 @@
-name: runtime binary for golang
+name: golang
 on:
   - workflow_call
 jobs:

@@ -1,4 +1,4 @@
-name: build runtime binary package for golang 1.21.1
+name: golang 1.21.1
 on:
   - workflow_call
   - workflow_dispatch
