@@ -2,6 +2,18 @@ name: runtime binary for golang
 on:
   - workflow_call
 jobs:
-  golang:
-    uses: ./.github/workflows/golang_1.21.5.yml
+  golang-1_21_1:
+    uses: ./.github/workflows/golang_1.21.1.yml
     secrets: inherit
+  # golang-1_21_2:
+  #   uses: ./.github/workflows/golang_1.21.2.yml
+  #   secrets: inherit
+  # golang-1_21_3:
+  #   uses: ./.github/workflows/golang_1.21.3.yml
+  #   secrets: inherit
+  # golang-1_21_4:
+  #   uses: ./.github/workflows/golang_1.21.4.yml
+  #   secrets: inherit
+  # golang-1_21_5:
+  #   uses: ./.github/workflows/golang_1.21.5.yml
+  #   secrets: inherit

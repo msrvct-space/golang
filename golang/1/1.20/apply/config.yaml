@@ -7,9 +7,9 @@ scripts:
 variables: []
 packages:
   - name: golang
-    version: 1.21.5
+    version: 1.20.12
     documents:
-      - name: go1.21.5.linux-amd64.tar.gz
+      - name: go1.20.12.linux-amd64.tar.gz
         type: pkg
         path_mode: 0755
         file_mode: 0755

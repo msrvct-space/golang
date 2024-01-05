@@ -5,7 +5,7 @@ source build.sh
 function main(){
     BASE_PATH=${PWD}
     get_system_info
-    get_package
-    get_install_tool
+    get_golang_package "1.20.12"
+    get_install_tool "v0.0.2"
 }
 main

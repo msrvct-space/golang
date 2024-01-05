@@ -1,6 +1,7 @@
-name: runtime binary for golang 1.21.5
+name: build runtime binary package for golang 1.21.1
 on:
   - workflow_call
+  - workflow_dispatch
 jobs:
   package:
     runs-on: ubuntu-latest
@@ -8,12 +9,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Login to GitHub Container Registry
         run: echo "${{ secrets.WORKFLOW }}" | docker login https://ghcr.io -u ${{ github.repository_owner }} --password-stdin
-      - name: Build Golang image
+      - name: Build Golang Package
         env:
           NAME: golang
           ARCH: linux/amd64,linux/arm64
-          VERSION: "1.21.5"
-        working-directory: language/golang/1.21.5
+          VERSION: "1.21.1"
+        working-directory: golang/1/1.21/1.21.1
         run: |
           docker buildx create --name mybuilder --driver docker-container --bootstrap
           docker buildx use mybuilder
